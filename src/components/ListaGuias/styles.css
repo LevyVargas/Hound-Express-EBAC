@@ -1,0 +1,296 @@
+.button__info {
+  padding: 1rem;
+}
+@media screen and (max-width: 48rem) {
+  .button__info {
+    padding: 4rem 0 4rem 0;
+  }
+}
+.button__info .button {
+  width: 75%;
+  background: #091e3f;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1.5rem 8.4375rem;
+  border: none;
+}
+@media screen and (max-width: 48rem) {
+  .button__info .button {
+    width: 90%;
+    padding: 1.8rem 8.4375rem;
+  }
+}
+.button__info .button__text {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+@media screen and (max-width: 48rem) {
+  .button__info .button__text {
+    font-size: 3rem;
+  }
+}
+
+.button__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 0;
+}
+.button__box .button__style {
+  color: #ffffff;
+  background: #091e3f;
+  display: inline-flex;
+  padding: 0.375rem 3.125rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 48rem) {
+  .button__box .button__style {
+    padding: 2rem 16rem;
+  }
+}
+.button__box .button__style .button__text {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+@media screen and (max-width: 48rem) {
+  .button__box .button__style .button__text {
+    font-size: 3.25rem;
+  }
+}
+
+.btn-guide-action {
+  background-color: #091e3f;
+  border: none;
+  color: #ffffff;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 0.3125rem;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.48);
+  z-index: 999;
+}
+.modal.is-open {
+  display: flex;
+}
+.modal__dialog {
+  background: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 80vh;
+  overflow: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+.modal__header, .modal__footer {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal__body {
+  padding: 12px 16px;
+}
+.modal .modal__title {
+  margin: 0;
+  font-size: 1rem;
+}
+.modal .modal__close {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.modal .btn {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+.modal .btn--primary {
+  background: #091e3f;
+  color: #ffffff;
+  border-color: #091e3f;
+}
+
+.history__content {
+  white-space: normal;
+}
+
+main.main {
+  padding: 3rem 0;
+  min-width: 1000px;
+}
+main.main .carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 48rem) {
+  main.main .carousel {
+    height: 93rem;
+    overflow: visible;
+  }
+}
+main.main .carousel .carousel__image {
+  width: 100%;
+  height: 26.5rem;
+  margin-bottom: 2.1875rem;
+}
+@media screen and (max-width: 48rem) {
+  main.main .carousel .carousel__image {
+    height: 93rem;
+  }
+}
+main.main .carousel .carousel__image .carousel__runway {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+@media screen and (max-width: 48rem) {
+  main.main .carousel .carousel__image .carousel__runway {
+    height: 93rem;
+  }
+}
+main.main .carousel .carousel__image .carousel__cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+main.main .carousel .carousel__image .carousel__cover .carousel__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 58%;
+  margin-top: 2rem;
+}
+@media screen and (max-width: 48rem) {
+  main.main .carousel .carousel__image .carousel__cover .carousel__content {
+    width: 85%;
+  }
+}
+main.main .carousel .carousel__image .carousel__cover .carousel__title {
+  width: 95.5%;
+  padding: 1.875rem 1.875rem 2.1875rem 1.25rem;
+  text-align: left;
+  color: #ffffff;
+  background-color: #091e3f;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+}
+@media screen and (max-width: 48rem) {
+  main.main .carousel .carousel__image .carousel__cover .carousel__title {
+    width: 94%;
+    padding: 1.9375rem 1.4375rem;
+    text-align: center;
+    font-size: 4.4rem;
+  }
+}
+main.main .carousel .carousel__image .carousel__cover .carousel__subtitle {
+  width: 70%;
+  max-width: 25rem;
+  margin-top: -1.5625rem;
+  text-align: left;
+  color: #ffffff;
+  background: #6ac6de;
+  line-height: 1.875rem;
+  padding: 0.9375rem 1.4375rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 48rem) {
+  main.main .carousel .carousel__image .carousel__cover .carousel__subtitle {
+    width: 94%;
+    margin-top: 0;
+    max-width: none;
+    text-align: center;
+    line-height: 2.875rem;
+    padding: 2.5rem 1.4375rem;
+    font-weight: 600;
+    font-size: 2.4rem;
+  }
+}
+main.main .carousel .carousel__image .carousel__plane {
+  position: absolute;
+  top: 1%;
+  right: 0.2%;
+  transform: translate(0%, -1%);
+  width: 45%;
+  min-width: 34.375rem;
+  height: auto;
+}
+@media screen and (max-width: 48rem) {
+  main.main .carousel .carousel__image .carousel__plane {
+    width: 195%;
+    min-width: none;
+    top: 0;
+    right: 0;
+    left: -95%;
+    transform: translate(0%, 60%);
+  }
+}
+
+/* List/Table */
+.table {
+  width: 60%;
+  margin: 3rem auto;
+  border-collapse: collapse;
+  background-color: #6ac6de;
+  border: 0.125rem solid #ffffff;
+  color: #091e3f;
+}
+@media screen and (max-width: 48rem) {
+  .table {
+    width: 90%;
+    font-size: 1.5rem;
+  }
+}
+.table .table__header {
+  background-color: #6ac6de;
+}
+.table th,
+.table td {
+  border: 0.125rem solid #ffffff;
+  padding: 0.625rem 0.9375rem;
+  text-align: center;
+}
+.table th .table__cell-actions,
+.table td .table__cell-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}/*# sourceMappingURL=styles.css.map */

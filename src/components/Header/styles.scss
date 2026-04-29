@@ -1,0 +1,447 @@
+$mainColor: #091e3f;
+$secondariColor: #6ac6de;
+$whiteColor: #ffffff;
+$fontFamily: "Open Sans", sans-serif;
+
+@mixin flexbox($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin laptops {
+    @media screen and (max-width: 70rem) {
+        @content;
+    }
+}
+
+@mixin tablets {
+    @media screen and (max-width: 60rem) {
+        @content;
+    }
+}
+
+@mixin phones {
+    @media screen and (max-width: 48rem) {
+        @content;
+    }
+}
+
+.button__info {
+    padding: 1rem;
+
+    @include phones {
+        padding: 4rem 0 4rem 0;
+    }
+
+    .button {
+        width: 75%;
+        background: $mainColor;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.625rem;
+        padding: 1.5rem 8.4375rem;
+        border: none;
+
+        @include phones {
+            width: 90%;
+            padding: 1.8rem 8.4375rem;
+        }
+    }
+
+    .button__text {
+        color: $whiteColor;
+        text-align: center;
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.5rem;
+        white-space: nowrap;
+
+        @include phones {
+            font-size: 3rem;
+        }
+    }
+}
+
+.button__box {
+    @include flexbox(row, center, center);
+    width: 100%;
+    padding: 4rem 0;
+
+    .button__style {
+        color: $whiteColor;
+        background: $mainColor;
+        display: inline-flex;
+        padding: 0.375rem 3.125rem;
+        cursor: pointer;
+
+        @include phones {
+            padding: 2rem 16rem;
+        }
+
+        .button__text {
+            color: $whiteColor;
+            text-align: center;
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1.5rem;
+
+            @include phones {
+                font-size: 3.25rem;
+            }
+        }
+    }
+}
+
+.btn-guide-action {
+    background-color: $mainColor;
+    border: none;
+    color: $whiteColor;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 0.3125rem;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.48);
+    z-index: 999;
+
+    &.is-open {
+        display: flex;
+    }
+
+    &__dialog {
+        background: #fff;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 520px;
+        max-height: 80vh;
+        overflow: auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__header,
+    &__footer {
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__body {
+        padding: 12px 16px;
+    }
+
+    .modal__title {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .modal__close {
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .btn {
+        padding: 6px 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        cursor: pointer;
+    }
+
+    .btn--primary {
+        background: $mainColor;
+        color: $whiteColor;
+        border-color: $mainColor;
+    }
+}
+
+.history__content {
+    white-space: normal;
+}
+
+/* Header */
+
+header.header {
+    @include flexbox(column, center, center);
+    grid-column: 1/3;
+    height: auto;
+    // background-color: red;
+    min-width: 1000px;
+
+    .header__section {
+        @include flexbox(row, center, center);
+        width: 58%;
+        height: auto;
+        padding-top: 1.25rem;
+        // background-color: blue;
+
+        @include phones {
+            @include flexbox(column, center, center);
+        }
+
+        .header__content {
+            @include flexbox(row, center, center);
+            width: 100%;
+            // min-width: 53.625rem;
+            // background-color: hotpink;
+
+            @include phones {
+                @include flexbox(column, center, center);
+                gap: 1.5rem;
+            }
+
+            .header__logo-container {
+                width: 100%;
+                // background-color: brown;
+
+                @include phones {
+                    text-align: center;
+                }
+
+                .header__logo {
+                    max-width: 14.8125rem;
+                    // background-color: green;
+
+                    @include phones {
+                        max-width: 20rem;
+                    }
+                }
+            }
+
+            .header__contact-group {
+                @include flexbox(row, flex-end, center);
+                width: 100%;
+                // background-color: orange;
+
+                @include phones {
+                    @include flexbox(row, center, center);
+                    gap: 2rem;
+                }
+
+                .header__contact-numbers {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 6.875rem;
+                    // background-color: blueviolet;
+                }
+
+                .header__contact {
+                    width: 100%;
+                    min-width: 10rem;
+                    // background-color: rgb(0, 255, 200);
+
+                    @include phones {
+                        width: 100%;
+                    }
+
+                    .header__contact-title {
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                        line-height: 1.375rem;
+                        letter-spacing: 0.0125rem;
+                        color: $mainColor;
+                        // background-color: cornflowerblue;
+
+                        @include phones {
+                            font-size: 1.2rem;
+                            flex-wrap: nowrap;
+                        }
+                    }
+
+                    .header__contact-text {
+                        font-size: 0.875rem;
+                        font-weight: 400;
+                        line-height: 1.375rem;
+                        letter-spacing: 0.0125rem;
+                        color: $secondariColor;
+                        // background-color: lightgreen;
+
+                        @include phones {
+                            font-size: 1.2rem;
+                            flex-wrap: nowrap;
+                        }
+                    }
+                }
+            }
+
+            .header__language {
+                font-size: 0.875rem;
+                font-weight: 500;
+                line-height: 1.375rem;
+                letter-spacing: 0.0125rem;
+                color: $mainColor;
+                // background-color: black;
+
+                @include phones {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 1rem 0 1rem 0;
+                    font-size: 1.3rem;
+                    // background-color: aqua;
+                }
+            }
+        }
+    }
+
+    /* Navigation panel */
+
+    .nav {
+        @include flexbox(row, center, center);
+        width: 100%;
+        height: auto;
+        min-width: 1000px;
+
+        .nav__menu {
+            @include flexbox(row, center, center);
+            width: 58%;
+            min-width: 1000px;
+            font-size: 0.9rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.375rem;
+            letter-spacing: 0.0125rem;
+            color: $whiteColor;
+            background: $mainColor;
+            white-space: nowrap;
+
+            @include phones {
+                height: 9rem;
+                justify-content: left;
+            }
+
+            .nav__group--primary {
+                width: 100%;
+                height: 100%;
+
+                .nav__list {
+                    @include flexbox(row, flex-start, center);
+                    width: 100%;
+                    list-style: none;
+                }
+
+                @include phones {
+                    display: none;
+                }
+
+            }
+
+            .nav__item {
+                @include flexbox(row, center, center);
+                width: auto;
+                height: 100%;
+                padding: 0.9375rem 1.5625rem;
+                text-decoration: none;
+                cursor: pointer;
+                color: $whiteColor;
+
+                @include phones {
+                    font-size: 2.5rem;
+                    justify-content: left;
+                    padding: 3rem 1rem;
+
+                }
+
+            }
+
+            .nav__group--secondary {
+                width: 50%;
+                height: 100%;
+
+                .nav__list {
+                    @include flexbox(row, flex-end, center);
+                    width: 100%;
+                    list-style: none;
+                }
+
+                @include phones {
+                    display: none;
+                }
+
+            }
+
+            .menu__checkbox {
+                display: none;
+            }
+
+            .menu__list {
+                list-style: none;
+                display: none;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+
+                @include phones {
+                    display: flex;
+                    padding-left: 4rem;
+                }
+
+            }
+
+            .menu__item {
+                position: relative;
+            }
+
+            .menu__link {
+                display: block;
+                padding: 0.75rem 1rem;
+                background-color: $mainColor;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .menu__img {
+
+                @include phones {
+                width: 4rem;
+                }
+
+            }
+
+            .submenu {
+                // width: 100%;
+                display: none;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                left: -3rem;
+                background-color: #fff;
+                border: 0px solid $mainColor;
+                position: absolute;
+                z-index: 1;
+                width: 51.6rem;
+            }
+
+            .menu__checkbox:checked ~ .menu__list .menu__item--has-submenu .submenu {
+                display: block;
+            }
+
+            .submenu li a {
+                display: block;
+                padding: 0.75rem 1rem;
+                background-color: $mainColor;
+                text-decoration: none;
+            }
+
+        }
+
+    }
+}
