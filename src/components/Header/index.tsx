@@ -36,17 +36,17 @@ const Header = ({ appName }: HeaderProps) => {
         <nav className="nav__menu">
           <div className="nav__group--primary">
             <ul className="nav__list">
-              <a className="nav__item">
-                <Link to="/">Inicio</Link>
+              <a>
+                <Link to="/" className="nav__item" >Inicio</Link>
               </a>
-              <a href="registro-guias.html" className="nav__item">
-                <Link to="/registro">Registro de guias</Link>
+              <a>
+                <Link to="/registro" className="nav__item">Registro de guias</Link>
               </a>
-              <a href="estado-general.html" className="nav__item">
-                <Link to="/estado-general">Estado General</Link>
+              <a>
+                <Link to="/estado-general" className="nav__item">Estado General</Link>
               </a>
-              <a href="lista-guias.html" className="nav__item">
-                <Link to="/lista-guias">Lista de Guías</Link>
+              <a>
+                <Link to="/lista-guias" className="nav__item">Lista de Guías</Link>
               </a>
             </ul>
           </div>
@@ -77,23 +77,23 @@ const Header = ({ appName }: HeaderProps) => {
                 </label>
                 <ul className="submenu">
                   <li>
-                    <a href="index.html" className="nav__item">
-                      <Link to="/">Inicio</Link>
+                    <a>
+                      <Link to="/" className="nav__item">Inicio</Link>
                     </a>
                   </li>
                   <li>
-                    <a href="registro-guias.html" className="nav__item">
-                      <Link to="/registro">Registro de Guías</Link>
+                    <a className="nav__item">
+                      <Link to="/registro" className="nav__item">Registro de Guías</Link>
                     </a>
                   </li>
                   <li>
-                    <a href="estado-general.html" className="nav__item">
-                      <Link to="/estado-general">Estado General</Link>
+                    <a className="nav__item">
+                      <Link to="/estado-general" className="nav__item">Estado General</Link>
                     </a>
                   </li>
                   <li>
-                    <a href="lista-guias.html" className="nav__item">
-                      <Link to="/lista-guias">Lista de Guías</Link>
+                    <a className="nav__item">
+                      <Link to="/lista-guias" className="nav__item">Lista de Guías</Link>
                     </a>
                   </li>
                 </ul>

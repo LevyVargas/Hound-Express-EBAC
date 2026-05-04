@@ -1,6 +1,5 @@
-import React from "react";
 import "./styles.scss";
-import { Guia, EstadoGeneralProps } from '../../types';
+import { EstadoGeneralProps } from '../../types';
 
 const EstadoGeneral = ({ guias }: EstadoGeneralProps) => {
   const pendientes = guias.filter(p => p.estatus === "Pendiente").length;

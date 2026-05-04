@@ -8,6 +8,7 @@ export interface Guia {
     fechaUltimaActualizacion: string;
     nombre: string;
     estatus: string;
+    historial?: string[];
 }
 
  export interface ListaGuiasProps {
@@ -20,4 +21,9 @@ export interface EstadoGeneralProps {
 
 export interface RegistroProps {
     agregarGuia: (guia: Guia) => void;
+}
+
+export interface ListaGuiasProps {
+    guias: Guia[];
+    actualizarGuia: (numeroGuia: string, nuevoEstado: string) => void;
 }

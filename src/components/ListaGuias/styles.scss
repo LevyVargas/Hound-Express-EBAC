@@ -105,6 +105,11 @@ $fontFamily: "Open Sans", sans-serif;
     font-size: 0.9rem;
     cursor: pointer;
     border-radius: 0.3125rem;
+
+    @include phones {
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
 }
 
 .modal {
@@ -177,8 +182,9 @@ $fontFamily: "Open Sans", sans-serif;
 
 main.main {
     padding: 3rem 0;
-    min-width: 1000px;
-    // grid-column: 1/3;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 
     .carousel {
         width: 100%;
@@ -299,36 +305,52 @@ main.main {
 
 /* List/Table */
 
-.table {
-    width: 60%;
-    margin: 3rem auto;
-    border-collapse: collapse;
-    background-color: $secondariColor;
-    border: 0.125rem solid $whiteColor;
-    color: $mainColor;
+.table__section {
+    width: 80%;
+    justify-self: center;
 
     @include phones {
+        margin-top: 10%;
+    }
+
+    .table__box {
         width: 90%;
-        font-size: 1.5rem;
-    }
+        margin: 0 auto;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
 
-    .table__header {
-        background-color: $secondariColor;
-    }
+        .table {
+            width: 100%;
+            min-width: 600px;
+            margin: 3rem 0;
+            border-collapse: collapse;
+            background-color: $secondariColor;
+            border: 0.125rem solid $whiteColor;
+            color: $mainColor;
 
-    th,
-    td {
-        border: 0.125rem solid $whiteColor;
-        padding: 0.625rem 0.9375rem;
-        text-align: center;
+            @include phones {
+                font-size: 2rem;
+            }
 
-        .table__cell-actions {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
+            .table__header {
+                background-color: $secondariColor;
+            }
+
+            th,
+            td {
+                border: 0.125rem solid $whiteColor;
+                padding: 0.625rem 0.9375rem;
+                text-align: center;
+
+                .table__cell-actions {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                }
+            }
         }
     }
 }

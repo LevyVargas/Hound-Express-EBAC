@@ -14,9 +14,10 @@ const RegistroGuias = ({ agregarGuia }: RegistroProps) => {
         numeroGuia: "",
         origen: "",
         destino: "",
-        estadoActual: "Pendiente",
+        estadoActual: "",
         nombre: "",
-        estatus: "Activa",
+        estatus: "Pendiente",
+        fecha: "",
     });
 
     const handleChange = (
@@ -31,7 +32,7 @@ const RegistroGuias = ({ agregarGuia }: RegistroProps) => {
 
         const nueva: Guia = {
             ...formData,
-            fechaUltimaActualizacion: new Date().toLocaleDateString(),
+            fechaUltimaActualizacion: formData.fecha || new Date().toLocaleDateString(),
         };
 
         agregarGuia(nueva);
@@ -75,8 +76,37 @@ const RegistroGuias = ({ agregarGuia }: RegistroProps) => {
                                 />
                             </div>
                             <div className="register__field">
-                                <select
+                                <input
                                     name="estadoActual"
+                                    className="register__input"
+                                    type="text"
+                                    placeholder="Estado actual*"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="register__field">
+                                <input
+                                    name="fecha"
+                                    className="register__input"
+                                    type="date"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="register__field">
+                                <input
+                                    name="nombre"
+                                    className="register__input"
+                                    type="text"
+                                    placeholder="Nombre*"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="register__field">
+                                <select
+                                    name="estatus"
                                     className="register__input register__input--clickable"
                                     onChange={handleChange}
                                 >
