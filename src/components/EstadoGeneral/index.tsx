@@ -1,10 +1,14 @@
 import "./styles.scss";
-import { EstadoGeneralProps } from '../../types';
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
-const EstadoGeneral = ({ guias }: EstadoGeneralProps) => {
+const EstadoGeneral = () => {
+  const guias = useSelector((state: RootState) => state.guides.guides);
+
   const pendientes = guias.filter(p => p.estatus === "Pendiente").length;
   const transito = guias.filter(t => t.estatus === "En tránsito").length;
   const entregados = guias.filter(e => e.estatus === "Entregado").length;
+  
   return (
     <main className="main">
       <section className="carousel">
@@ -54,7 +58,7 @@ const EstadoGeneral = ({ guias }: EstadoGeneralProps) => {
               />
               <div className="summary__data">
                 <ul className="summary__list">
-                  <li className="summary__text">Activas: {pendientes}</li>
+                  <li className="summary__text">Pendientes: {pendientes}</li>
                 </ul>
               </div>
               <div className="summary__arrow">

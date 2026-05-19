@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.scss";
 import { Guia } from "../../types";
+import { useDispatch } from "react-redux";
+import { addGuide } from "../../store/guidesSlice";
 
-interface RegistroProps {
-    agregarGuia: (guia: Guia) => void;
-}
 
-const RegistroGuias = ({ agregarGuia }: RegistroProps) => {
+const RegistroGuias = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -35,7 +35,7 @@ const RegistroGuias = ({ agregarGuia }: RegistroProps) => {
             fechaUltimaActualizacion: formData.fecha || new Date().toLocaleDateString(),
         };
 
-        agregarGuia(nueva);
+        dispatch(addGuide(nueva));
         navigate("/lista-guias");
     };
 

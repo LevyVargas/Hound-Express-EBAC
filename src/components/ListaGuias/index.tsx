@@ -1,12 +1,18 @@
 import { useState } from "react";
 import "./styles.scss";
-import { Guia, ListaGuiasProps } from "../../types";
+import { Guia } from "../../types";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../store/store";
+import { updateGuideStatus } from "../../store/guidesSlice";
 
-const ListaGuias = ({ guias, actualizarGuia }: ListaGuiasProps) => {
+const ListaGuias = () => {
     const [guiaSeleccionada, setGuiaSeleccionada] = useState<Guia | null>(null);
     const [mostrarModalStatus, setMostrarModalStatus] = useState(false);
     const [mostrarModalHistorial, setMostrarModalHistorial] = useState(false);
     const [nuevoEstado, setNuevoEstado] = useState("");
+
+    const dispatch = useDispatch();
+    const guias = useSelector((state: RootState) => state.guides.guides);
 
     const abrirActualizar = (guia: Guia) => {
         setGuiaSeleccionada(guia);
@@ -20,7 +26,7 @@ const ListaGuias = ({ guias, actualizarGuia }: ListaGuiasProps) => {
 
     const aplicarNuevoEstado = () => {
         if (guiaSeleccionada && nuevoEstado) {
-            actualizarGuia(guiaSeleccionada.numeroGuia, nuevoEstado);
+            dispatch(updateGuideStatus({ numeroGuia: guiaSeleccionada.numeroGuia, nuevoEstado }));
             setMostrarModalStatus(false);
             setNuevoEstado("");
             setGuiaSeleccionada(null);
